@@ -3,10 +3,22 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {
-    "restify": "^7.2.2",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register -R spec **/spec/*.js",
+    "start": "node src/index.js"
+  },
+  "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
-    "sinon": "^7.1.1"
+    "sinon": "^7.1.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0"
+  },
+    "babel": {
+    "presets": ["env"]
+  },
+  "dependencies": {
+    "mongoose": "^5.3.8",
+    "restify": "^7.2.2"
   }
 }

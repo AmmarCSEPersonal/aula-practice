@@ -1,6 +1,7 @@
 import restify from 'restify';
 import mongoose from 'mongoose';
 import to from 'await-to-js';
+import config from './config';
 import api from './api/rectifications';
 
 async function launchSequence(server) {
@@ -18,7 +19,7 @@ async function launchSequence(server) {
 }
 async function connectMongo() {
     const options = { server: { socketOptions: { keepAlive: 1 } } };
-    return await mongoose.connect('mongodb://localhost/aula_practice', options);
+    return await mongoose.connect(config.dbUri, options);
 }
 async function listen(){
     api(server, {});
@@ -26,8 +27,8 @@ async function listen(){
 }
 
 const server = restify.createServer({
-    name: 'myapp',
-    version: '1.0.0'
+    name: config.appName,
+    version: config.appVersion
 });
 
 server.use(restify.plugins.acceptParser(server.acceptable));

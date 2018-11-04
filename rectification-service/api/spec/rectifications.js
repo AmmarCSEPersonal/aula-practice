@@ -1,6 +1,6 @@
-import server from '../../';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+import server from '../../';
 
 const should = chai.should();
 chai.use(chaiHttp);

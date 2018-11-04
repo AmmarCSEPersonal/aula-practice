@@ -11,7 +11,7 @@ import mongoose from 'mongoose';
       'case-insensitive': 1
    }
 }*/
-var rectificationSchema = new mongoose.Schema({
+const rectificationSchema = new mongoose.Schema({
     //TODO: Make currency an enum or type
     coreLabel: { type: String, required: true },
     valueTarget: { type: String, required: true },
@@ -23,4 +23,4 @@ var rectificationSchema = new mongoose.Schema({
     //subscriptions: [PositionSubscription]
 });
  
-module.exports = mongoose.model('Rectification', rectificationSchema);
+export default mongoose.model('Rectification', rectificationSchema);

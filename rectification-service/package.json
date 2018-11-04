@@ -4,8 +4,10 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register -R spec **/spec/*.js",
-    "start": "node src/index.js"
+    "tests": "mocha --compilers js:babel-core/register -R spec **/spec/*.js",
+    "integration-tests": "NODE_ENV=test ./node_modules/node-mongo-seeds/bin/seed --seeds-folder ./models/seeds && mocha --compilers js:babel-core/register -R spec integration-tests/*.js",
+    "seed": "NODE_ENV=development ./node_modules/node-mongo-seeds/bin/seed --seeds-folder ./models/seeds",
+    "start": "NODE_ENV=development ./node_modules/.bin/babel-node server.js"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -24,3 +26,4 @@
     "restify": "^7.2.2"
   }
 }
+

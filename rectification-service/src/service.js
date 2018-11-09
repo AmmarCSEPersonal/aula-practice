@@ -1,6 +1,6 @@
 import restify from 'restify';
-import mongoose from 'mongoose';
 import to from 'await-to-js';
+import connectMongo from './models/db/db-client';
 import api from './api/rectifications';
 import config from '../config';
 
@@ -15,10 +15,6 @@ async function launchSequence(service) {
     }
 
     console.log('%s listening at %s', service.name, service.url);
-}
-async function connectMongo() {
-    const options = { service: { socketOptions: { keepAlive: 1 } } };
-    return await mongoose.connect(config.dbUri, options);
 }
 async function listen(){
     api(service, {});

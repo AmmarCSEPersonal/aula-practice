@@ -4,7 +4,7 @@ import Rectification from '../models/rectification';
 
 function api(app){
   app.get('/rectifications', async (req, res, next) => {
-    const [error, rectifications] = await to(Rectification.find({}, '-_id'));
+    const [error, rectifications] = await to(Rectification.find({}, '-_id -__v'));
     console.log('here');
     res.send(httpStatus.OK, rectifications);  
     next();

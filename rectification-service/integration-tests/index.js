@@ -2,7 +2,7 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import to from 'await-to-js';
 import startService from '../src/service';
-import seedData from '../src/models/seeds/rectifications.js';
+import seedData from '../src/models/db/seeds/rectifications.js';
 console.log(seedData);
 
 

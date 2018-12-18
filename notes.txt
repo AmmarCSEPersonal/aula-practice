@@ -1,0 +1,18 @@
+-material-ui
+
+-redux https://medium.com/backticks-tildes/setting-up-a-redux-project-with-create-react-app-e363ab2329b8
+
+-router
+
+-component layout, components containers
+
+-stream in /Work/video-stream-sample
+
+-socket
+
+mediatorjs, service discovery, api gateway
+
+dockerize
+
+host on s3
+
